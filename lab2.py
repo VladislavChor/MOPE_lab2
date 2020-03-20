@@ -65,6 +65,10 @@ def main():
 
     major_deviation = sqrt((4 * m - 4) / (m * m - 4 * m))
 
+    # Знаходимо Fuv, значення яких потрібні для знаходження експериментального значення критерію Романовського
+    # Для кожної пари uv (U = 1...N, V = 1...N) ділимо дисперсію U на дисперсію V, або V на U, перевіряючи те, що дисперсія у чисельнику має буде більше ніж дисперсія у знаменнику
+    # Формули взяті з методички (Сторінка 9, пункт 3)
+
     f12 = dispersion1 / dispersion2 if dispersion1 >= dispersion2 else dispersion2 / dispersion1
     f23 = dispersion2 / dispersion3 if dispersion2 >= dispersion3 else dispersion3 / dispersion2
     f13 = dispersion1 / dispersion3 if dispersion1 >= dispersion3 else dispersion3 / dispersion1
